@@ -1,24 +1,18 @@
 /* eslint-disable no-undef */
 
 function compareSnapshotCommand() {
-  Cypress.Commands.add('compareSnapshot', (name, errorThreshold = 0.00) => {
-    // get image title from the 'type' environment variable
-    let title = 'actual';
-    if (Cypress.env('type') === 'base') { title = 'base'; }
-
+  Cypress.Commands.add('compareSnapshot', (name) => {
     // take snapshot
-    cy.screenshot(`${name}-${title}`);
+    cy.screenshot(`${name}`);
 
     // run visual tests
-    if (Cypress.env('type') === 'actual') {
-      const options = {
-        fileName: name,
-        specDirectory: Cypress.spec.name,
-      };
-      cy.task('compareSnapshotsPlugin', options).then((results) => {
-        if (results.percentage > errorThreshold) throw new Error(`${name} images are different`);
-      });
-    }
+    const options = {
+      fileName: name,
+      specDirectory: Cypress.spec.name,
+    };
+    cy.task('compareSnapshotsPlugin', options).then((results) => {
+      if (!diff.hasPassed(results.code)) throw new Error(`${name} images are different`);
+    });
   });
 }
 

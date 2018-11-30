@@ -1,19 +1,23 @@
 # Cypress Visual Regression
 
-[![NPM](https://nodei.co/npm/cypress-visual-regression.png)](https://nodei.co/npm/cypress-visual-regression/)
+[![NPM](https://nodei.co/npm/cypress-blink-test.png)](https://nodei.co/npm/cypress-blink-test/)
 
 [![Build Status](https://travis-ci.org/mjhea0/cypress-visual-regression.svg?branch=master)](https://travis-ci.org/mjhea0/cypress-visual-regression)
 
 Module for adding visual regression testing to [Cypress](https://www.cypress.io/).
 
-> **NOTE:** [ImageMagick](http://www.imagemagick.org/script/index.php) is required for this project to work.
+> **NOTE:** 
+This is forked from [mjhea0](https://github.com/mjhea0/cypress-visual-regression)
+who did all the hard work this was created just to remove the dependency on image-magik to see if it could be done directly with blink so no external install needed
+
+I've currently taken the type switch out so the base images is a manual process.
 
 ## Getting Started
 
 Install:
 
 ```sh
-$ npm install cypress-visual-regression
+$ npm install cypress-blink-test
 ```
 
 Add the following config to your *cypress.json* file:
@@ -47,16 +51,11 @@ compareSnapshotCommand();
 
 Add `cy.compareSnapshot('home');` in your tests specs whenever you want to test for visual regressions, making sure to replace `home` with a relevant name. You can also add an optional error threshold: Value can range from 0.00 (no difference) to 1.00 (every pixel is different). So, if you enter an error threshold of 0.50, the test would fail only if 0.51 percent of pixels are different.
 
-Take the base images:
-
-```sh
-$ ./node_modules/.bin/cypress run --env type=base --config screenshotsFolder=cypress/snapshots/base
-```
 
 Find regressions:
 
 ```sh
-$ ./node_modules/.bin/cypress run --env type=actual
+$ ./node_modules/.bin/cypress run 
 ```
 
 ## Example
