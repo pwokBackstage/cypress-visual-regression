@@ -42,6 +42,7 @@
     "cypress.json"
   ],
   "dependencies": {
-    "blink-diff": "^1.0.13"
+    "blink-diff": "^1.0.13",
+    "fs": "0.0.1-security"
   }
 }
