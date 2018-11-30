@@ -17,7 +17,7 @@ function compareSnapshotsPlugin(args) {
       imageAPath: path.join(SNAPSHOT_DIRECTORY, 'base', args.specDirectory, `${args.fileName}.png`), // Use file-path
       imageBPath: path.join(SCREENSHOT_DIRECTORY, args.specDirectory, `${args.fileName}.png`),
       thresholdType: BlinkDiff.THRESHOLD_PERCENT,
-      threshold: 0.1, // 1% threshold
+      threshold: 0.001, // 1% threshold
       imageOutputPath: path.join(SNAPSHOT_DIRECTORY, 'diff', args.specDirectory, `${args.fileName}.png`),
     });
 
