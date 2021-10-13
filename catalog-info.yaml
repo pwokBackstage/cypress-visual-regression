@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cypress-visual-regression
+  annotations:
+    github.com/project-slug: pwokBackstage/cypress-visual-regression
+spec:
+  type: other
+  lifecycle: unknown
+  owner: PatrickWalker
