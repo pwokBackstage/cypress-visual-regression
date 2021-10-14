@@ -6,6 +6,7 @@ metadata:
     github.com/project-slug: pwokBackstage/cypress-visual-regression
     jira/project-key: ABA
     backstage.io/techdocs-ref: dir:.
+    grafana/tag-selector: "my-tag"
 spec:
   type: other
   lifecycle: unknown
