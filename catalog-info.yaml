@@ -5,6 +5,7 @@ metadata:
   annotations:
     github.com/project-slug: pwokBackstage/cypress-visual-regression
     jira/project-key: ABA
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: other
   lifecycle: unknown
